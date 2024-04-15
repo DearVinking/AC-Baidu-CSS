@@ -85,6 +85,14 @@ div[tpl*="wenku_wenshu"]{
     }
 }
 
+/* AI 总结结果样式优化 */
+div[tpl="wenda_index"]{
+    & div[class*="interact-wrapper"]{
+        display: none!important;
+    }
+}
+
+
 /* 疾病相关问题特别提醒 */
 div[tpl="ask_doctor"],
 div[tpl="wenda_abstract_pc"],
