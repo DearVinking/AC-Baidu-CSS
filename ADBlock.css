@@ -1,4 +1,4 @@
-/* 2024.3.21更新 */
+/* 2024.4.15更新 */
 
 /* 隐藏所有无用的的百度服务 */
 div[tpl*="game"],
@@ -35,99 +35,112 @@ div[tpl="open_source_software"],
 div[tpl="pc-soft-app"],
 div[tpl="vmp_newproject_new"],
 div[tpl="wenda_abstract_pc"],
-div[tpl="aladdin_wenku_pc_new"] > div,
+div[tpl="aladdin_wenku_pc_new"]>div,
+div[tql*="wenku"],
 div[tpl="jr_stock_comment_san"],
 div[tpl="ybb"],
 div[tpl="med_disease_kg_collection_san"],
 div[tpl="live_converge_san"],
 div[tpl="sp_purc_pc"],
 div[tpl="generaltable"] {
-  margin: 0 0 10px !important;
-  padding: 10px 20px !important;
+    margin: 0 0 10px !important;
+    padding: 10px 20px !important;
 
-  & > * {
-    display: none !important;
-  }
+    &>* {
+        display: none !important;
+    }
 
-  &::after {
-    width: 100%;
-    content: "结果已被隐藏";
-  }
+    &::after {
+        width: 100%;
+        content: "结果已被隐藏";
+    }
 
-  &::before {
-    content: "匹配到的规则:" attr(tpl);
-    position: absolute;
-    right: 0.2rem;
-    color: #a9a9a9;
-  }
+    &::before {
+        content: '匹配到的规则:' attr(tpl);
+        position: absolute;
+        right: 0.2rem;
+        color: #A9A9A9;
+    }
 }
 
 /* 电话号码查询 */
 div[tpl="ms_mark"],
-div[tpl="ms_number"] {
-  & .new-pmd .c-gap-top-xsmall {
-    display: block !important;
-  }
-  & div[class*="link-more_"] {
-    display: none !important;
-  }
+div[tpl="ms_number"]{
+    & .new-pmd .c-gap-top-xsmall{
+        display: block !important;
+    }
+    & div[class*="link-more_"]{
+        display: none !important;
+    }
+}
+
+/* 百度文库结果样式优化 */
+div[tpl*="wenku_wenshu"]{
+    & div[class*="info-wrap-new"]{
+        opacity: 0;
+    }
+    & div[class*="footer"],
+    & a[class*="check-more"]{
+        display: none!important;
+    }
 }
 
 /* 疾病相关问题特别提醒 */
 div[tpl="ask_doctor"],
 div[tpl="wenda_abstract_pc"],
-div[tpl="med_disease_kg_collection_san"] {
-  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
-  padding: 15px !important;
-  &::after {
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-    content: "重要提示：您正在搜索疾病相关问题，请勿轻易相信网络结果，及时就医" !important;
-    display: block !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-  &::before {
-    content: "" !important;
-  }
+div[tpl="med_disease_kg_collection_san"]
+ {
+    background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    padding: 15px !important;
+    &::after{
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        content: '重要提示：您正在搜索疾病相关问题，请勿轻易相信网络结果，及时就医'!important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    &::before{
+        content: ''!important;
+    }
 }
 
 /* 结果框优化 */
 .result,
 .result-op.c-container.new-pmd {
-  border: 2px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: border .15s ease-in-out;
 }
 
 .result:hover,
 .result-op.c-container.new-pmd:hover {
-  border: 2px solid rgb(0 186 145 / 60%) !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
+    border: 2px solid rgb(0 186 145 / 60%) !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: border .15s ease-in-out;
 }
 
 a[class*="foot-more"] {
-  margin-top: 8px;
+    margin-top: 8px;
 }
 
 #wrapper #content_left .op-soft-title a:hover:after,
 #wrapper #content_left .result a:hover:after,
 #wrapper #content_left .result-op a:hover:after,
-#wrapper #content_left > .c-container a:hover:after,
+#wrapper #content_left>.c-container a:hover:after,
 #wrapper #content_left .op-soft-title a:visited:hover:after,
 #wrapper #content_left .result a:visited:hover:after,
 #wrapper #content_left .result-op a:visited:hover:after,
-#wrapper #content_left > .c-container a:visited:hover:after,
+#wrapper #content_left>.c-container a:visited:hover:after,
 .pf,
 .s-top-username,
 .selected-search-box,
@@ -154,175 +167,175 @@ div[class*="_new-kg-header_"],
 div[tpl="app/hit-top-new"],
 div[tpl="app/footer"],
 div[tpl="app/rs"],
-div[tpl="app/search-tool"] {
-  display: none !important;
+div[tpl="app/search-tool"]{
+    display: none !important;
 }
 
-.cu-border {
-  width: 100%;
+.cu-border{
+    width: 100%;
 }
 
 /* 隐藏明星艺人打榜送花的百科 */
 .c-group-wrapper,
 .search-source-wrap {
-  display: none !important;
+    display: none !important;
 }
 
 #content_left {
-  padding-top: 65px;
+    padding-top: 65px;
 }
 
 #form.has-soutu .quickdelete {
-  right: 10px !important;
+    right: 10px !important;
 }
 
 .fm.has-soutu {
-  display: flex;
-  flex-direction: row;
-  min-width: 650px;
+    display: flex;
+    flex-direction: row;
+    min-width: 650px;
 }
 
 .bdsug.bdsug-new {
-  width: 528px !important;
+    width: 528px !important;
 }
 
 .c-span12 {
-  width: 100%;
+    width: 100%;
 }
 
 .c-border {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 
-div[tpl="dict3"] {
-  padding: 10px 20px !important;
+div[tpl='dict3'] {
+    padding: 10px 20px !important;
 }
 
 body #head {
-  background: rgba(248, 248, 248, 0.4) !important;
-  border-bottom: none !important;
-  backdrop-filter: blur(10px) !important;
+    background: rgba(248, 248, 248, 0.4) !important;
+    border-bottom: none !important;
+    backdrop-filter: blur(10px) !important;
 }
 
 div[tpl="ai_index"] {
-  padding: 10px !important;
+    padding: 10px !important;
 }
 
 .wd-ai-index-pc {
-  width: 100% !important;
-  margin: 0px !important;
+    width: 100% !important;
+    margin: 0px !important;
 }
 
 div[class*="blog-more-wrap"] {
-  display: none !important;
+    display: none !important;
 }
 
 .cu-border,
 div[class*="re-box"],
 table {
-  box-shadow: none !important;
-  width: 100%;
+    box-shadow: none !important;
+    width: 100%;
 }
 
 h3::before {
-  display: none !important;
+    display: none !important;
 }
 
 #wrapper #content_left .op-soft-title a,
 #wrapper #content_left .result a,
 #wrapper #content_left .result-op a,
-#wrapper #content_left > .c-container a {
-  color: #3979d3 !important;
+#wrapper #content_left>.c-container a {
+    color: #3979d3 !important;
 }
 
 /* 百度相关结果后追加提示 */
 /* 标题对齐优化 */
 div[tpl] h3 {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-div[tpl] h3 > a {
-  margin: 0px;
+div[tpl] h3>a {
+    margin: 0px;
 }
 
 /* 提示部分 */
 div[tpl="sg_kg_entity_san"] h3::after {
-  font-size: 0.15rem;
-  color: #fff;
-  background: #24bb5b;
-  padding: 1px 5px;
-  margin: 0px 10px;
-  content: "百科";
-  border-radius: 6px;
+    font-size: .15rem;
+    color: #fff;
+    background: #24bb5b;
+    padding: 1px 5px;
+    margin: 0px 10px;
+    content: '百科';
+    border-radius: 6px;
 }
 
 div[tpl="dict3"] h3::after {
-  font-size: 0.15rem;
-  color: #fff;
-  background: #24bb5b;
-  padding: 1px 5px;
-  margin: 0px 10px;
-  content: "翻译";
-  border-radius: 6px;
+    font-size: .15rem;
+    color: #fff;
+    background: #24bb5b;
+    padding: 1px 5px;
+    margin: 0px 10px;
+    content: '翻译';
+    border-radius: 6px;
 }
 
 #b_header {
-  border: none !important;
-  background-color: transparent !important;
+    border: none !important;
+    background-color: transparent !important;
 }
 
-#b_content #b_results > li:not(#mfa_root) {
-  border: 2px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
+#b_content #b_results>li:not(#mfa_root) {
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: border .15s ease-in-out;
 }
 
-#b_content #b_results > li:not(#mfa_root):hover {
-  border: 2px solid rgb(0 186 145 / 60%) !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
+#b_content #b_results>li:not(#mfa_root):hover {
+    border: 2px solid rgb(0 186 145 / 60%) !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    transition: border .15s ease-in-out;
 }
 
 #container.sam_newgrid td:nth-child(1),
 #container.sam_newgrid th:nth-child(1) {
-  width: 0;
+    width: 0;
 }
 
 /* 插件样式输入框优化 */
 #sp-ac-userstyleTEXT {
-  min-width: 100%;
-  min-height: 300px;
-  margin-left: unset !important;
+    min-width: 100%;
+    min-height: 300px;
+    margin-left: unset !important;
 }
 
 *[ac-needhide] .blockShow:hover {
-  border: none;
+    border: none;
 }
 
-div :has(> .blockShow) {
-  padding: 0.1rem 0.2rem !important;
+div :has(>.blockShow) {
+    padding: .1rem .2rem !important;
 
-  &::after {
-    position: absolute;
-    right: 0.2rem;
-    content: "自主拦截域名 - 点击标题显示结果";
-    color: #a9a9a9;
-  }
+    &::after {
+        position: absolute;
+        right: 0.2rem;
+        content: "自主拦截域名 - 点击标题显示结果";
+        color: #A9A9A9;
+    }
 }
 
 .nors {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
 }
 
 #wrapper #page {
-  width: 100% !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
