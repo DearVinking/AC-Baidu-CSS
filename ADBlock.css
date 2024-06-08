@@ -368,5 +368,5 @@ div :has(> .blockShow) {
   justify-content: space-evenly;
 }
 .ipt_rec, .quickdelete{
-  display: none;
+  display: none !important;
 }
