@@ -122,6 +122,7 @@ div[tpl="med_disease_kg_collection_san"] {
 .result,
 .result-op.c-container.new-pmd {
   border: 2px solid rgba(0, 0, 0, 0.1) !important;
+  width: 100%;
   box-shadow: none !important;
   border-radius: 6px !important;
   transition: border 0.15s ease-in-out;
