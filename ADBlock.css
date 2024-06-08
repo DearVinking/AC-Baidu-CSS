@@ -367,3 +367,6 @@ div :has(> .blockShow) {
   align-items: center;
   justify-content: space-evenly;
 }
+.ipt_rec, .quickdelete{
+  display: none;
+}
