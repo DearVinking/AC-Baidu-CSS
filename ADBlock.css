@@ -1,4 +1,4 @@
-/* 2024.6.8更新 */
+/* 2024.8.6 更新 */
 
 /* 隐藏所有无用的的百度服务 */
 div[tpl*="game"],
@@ -203,7 +203,11 @@ div[class*="exam_"] {
 }
 
 #content_left {
-  padding-top: 65px;
+  padding-top: 85px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #form.has-soutu .quickdelete {
