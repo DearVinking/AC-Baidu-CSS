@@ -52,15 +52,13 @@ div[tpl="generaltable"] {
   }
 
   &::after {
-    width: 100%;
     content: "匹配到的规则:" attr(tpl);
+    color: #a9a9a9;
+    text-align: right;
   }
 
   &::before {
     content: "结果已被隐藏";
-    position: absolute;
-    right: 0.2rem;
-    color: #a9a9a9;
   }
 }
 
