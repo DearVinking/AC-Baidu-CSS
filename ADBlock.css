@@ -204,10 +204,13 @@ div[class*="exam_"] {
 
 #content_left {
   padding-top: 85px;
-  width: 100%;
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: unset !important;
+  padding-left: unset !important;
+  
 }
 
 #form.has-soutu .quickdelete {
