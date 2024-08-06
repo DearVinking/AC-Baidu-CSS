@@ -55,10 +55,12 @@ div[tpl="generaltable"] {
     content: "匹配到的规则:" attr(tpl);
     color: #a9a9a9;
     text-align: right;
+    width: 50%;
   }
 
   &::before {
     content: "结果已被隐藏";
+    width: 50%;
   }
 }
 
