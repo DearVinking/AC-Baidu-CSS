@@ -129,14 +129,19 @@ div[tpl="med_disease_kg_collection_san"] {
   transition: border 0.15s ease-in-out;
 }
 
-#wrapper #content_left .op-soft-title h3[class*='t'],
-#wrapper #content_left .result h3[class*='t'],
-#wrapper #content_left .result-op h3[class*='t'],
-#wrapper #content_left > .c-container h3[class*='t']{
-    background-color: #f8f8f8;
-    margin: 0px -8px 10px -20px;
-    padding: 8px 20px 5px;
-    border-radius: 5px 5px 0 0;
+#container.sam_newgrid .c-container .t a,
+#container.sam_newgrid .c-container .c-title a {
+  text-decoration: none !important;
+}
+
+#wrapper #content_left .op-soft-title h3[class*="t"],
+#wrapper #content_left .result h3[class*="t"],
+#wrapper #content_left .result-op h3[class*="t"],
+#wrapper #content_left > .c-container h3[class*="t"] {
+  background-color: #f8f8f8;
+  margin: 0px -8px 10px -20px;
+  padding: 8px 20px 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 .result:hover,
@@ -210,7 +215,6 @@ div[class*="exam_"] {
   align-items: center;
   margin-left: unset !important;
   padding-left: unset !important;
-  
 }
 
 #form.has-soutu .quickdelete {
@@ -374,6 +378,7 @@ div :has(> .blockShow) {
   align-items: center;
   justify-content: space-evenly;
 }
-.ipt_rec, .quickdelete{
+.ipt_rec,
+.quickdelete {
   display: none !important;
 }
