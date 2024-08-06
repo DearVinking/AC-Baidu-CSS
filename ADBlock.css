@@ -231,6 +231,11 @@ div[class*="exam_"] {
   width: 528px !important;
 }
 
+.s_form_wrapper{
+  width: 100%;
+  justify-content: center;
+}
+
 .c-span12 {
   width: 100%;
 }
