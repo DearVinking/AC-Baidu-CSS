@@ -53,11 +53,11 @@ div[tpl="generaltable"] {
 
   &::after {
     width: 100%;
-    content: "结果已被隐藏";
+    content: "匹配到的规则:" attr(tpl);
   }
 
   &::before {
-    content: "匹配到的规则:" attr(tpl);
+    content: "结果已被隐藏";
     position: absolute;
     right: 0.2rem;
     color: #a9a9a9;
