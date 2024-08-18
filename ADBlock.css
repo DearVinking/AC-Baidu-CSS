@@ -120,6 +120,11 @@ div[tpl="med_disease_kg_collection_san"] {
 }
 
 /* 结果框优化 */
+#container {
+  margin-left: unset !important;
+  width: 100%;
+}
+
 .result,
 .result-op.c-container.new-pmd {
   border: 2px solid rgba(0, 0, 0, 0.1) !important;
@@ -231,12 +236,12 @@ div[class*="exam_"] {
   width: 528px !important;
 }
 
-.s_form_wrapper{
+.s_form_wrapper {
   width: 100%;
   justify-content: center;
 }
 
-.wrapper_s #u{
+.wrapper_s #u {
   height: 100% !important;
   margin: 0 !important;
   display: flex;
