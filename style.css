@@ -248,6 +248,7 @@ div[class*="exam_"] {
   width: 528px !important;
 }
 
+/* 导航栏优化 */
 .s_form_wrapper {
   width: 100%;
   justify-content: center;
@@ -257,7 +258,18 @@ div[class*="exam_"] {
   height: 100% !important;
   margin: 0 !important;
   display: flex;
+  gap: 20px;
   align-items: center;
+  & > #myuser {
+    margin: 0 !important;
+  }
+}
+
+.wrapper_new #u #s-top-loginbtn,
+.wrapper_new #u #user {
+  padding: 0 !important;
+  background: transparent;
+  margin: 0 20px !important;
 }
 
 .c-span12 {
