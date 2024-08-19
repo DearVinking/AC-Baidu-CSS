@@ -302,6 +302,11 @@ div[class*="exam_"] {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
+  padding: 0;
+}
+
+.wrapper_new #form .bdsug-new ul {
+  border: none !important;
 }
 
 .wrapper_s #u {
