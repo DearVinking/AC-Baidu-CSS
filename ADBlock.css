@@ -149,6 +149,14 @@ div[tpl="med_disease_kg_collection_san"] {
   border-radius: 5px 5px 0 0;
 }
 
+#wrapper #rs,
+#wrapper #content_left .result,
+#wrapper #content_left .result-op,
+#wrapper #content_left > .c-container {
+  display: flex;
+  align-items: center;
+}
+
 .result:hover,
 .result-op.c-container.new-pmd:hover {
   border: 2px solid rgb(0 186 145 / 60%) !important;
