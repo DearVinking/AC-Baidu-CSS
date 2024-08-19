@@ -5,5 +5,11 @@
       "src": "vercel-build.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/style.css",
+      "dest": "style.css"
+    }
   ]
 }
