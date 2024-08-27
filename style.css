@@ -508,16 +508,16 @@ div[class*="header_"] {
 }
 
 a .c-text {
-  position: absolute;
-  right: 20px;
-  margin: 0;
-  top: 5px;
-  border-radius: 5px;
+  position: absolute!important;
+  right: 20px!important;
+  margin: 0!important;
+  top: 5px!important;
+  border-radius: 5px!important;
   padding: 1px 6px !important;
   color: #fff !important;
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    color: #3476d2;
+    color: #3476d2!important;
   }
 }
