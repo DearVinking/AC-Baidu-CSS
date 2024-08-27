@@ -64,115 +64,7 @@ div[tpl="generaltable"] {
   }
 }
 
-/* 电话号码查询 */
-div[tpl="ms_mark"],
-div[tpl="ms_number"] {
-  & .new-pmd .c-gap-top-xsmall {
-    display: block !important;
-  }
-  & div[class*="link-more_"] {
-    display: none !important;
-  }
-}
-
-/* 百度文库结果样式优化 */
-div[tpl*="wenku_wenshu"] {
-  & div[class*="info-wrap-new"] {
-    opacity: 0;
-  }
-  & div[class*="footer"],
-  & a[class*="check-more"] {
-    display: none !important;
-  }
-}
-
-/* AI 总结结果样式优化 */
-div[tpl="wenda_index"] {
-  & div[class*="interact-wrapper"] {
-    display: none !important;
-  }
-}
-
-/* 疾病相关问题特别提醒 */
-div[tpl="ask_doctor"],
-div[tpl="wenda_abstract_pc"],
-div[tpl="med_disease_kg_collection_san"] {
-  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important;
-  padding: 15px !important;
-  &::after {
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-    content: "重要提示：您正在搜索疾病相关问题，请勿轻易相信网络结果，及时就医" !important;
-    display: block !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-  &::before {
-    content: "" !important;
-  }
-}
-
-/* 结果框优化 */
-#container {
-  margin-left: unset !important;
-  width: 100%;
-}
-
-.result,
-.result-op.c-container.new-pmd {
-  border: 2px solid rgba(0, 0, 0, 0.1) !important;
-  width: 100%;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
-}
-
-#container.sam_newgrid .c-container .t a,
-#container.sam_newgrid .c-container .c-title a {
-  text-decoration: none !important;
-}
-
-#wrapper #content_left .op-soft-title h3[class*="t"],
-#wrapper #content_left .result h3[class*="t"],
-#wrapper #content_left .result-op h3[class*="t"],
-#wrapper #content_left > .c-container h3[class*="t"] {
-  background-color: #f8f8f8;
-  margin: 0px -8px 10px -20px;
-  padding: 8px 20px 5px;
-  border-radius: 5px 5px 0 0;
-}
-
-#wrapper #rs,
-#wrapper #content_left .result,
-#wrapper #content_left .result-op,
-#wrapper #content_left > .c-container {
-  display: flex;
-  align-items: center;
-  & > div {
-    margin: 0 !important;
-    width: 100% !important;
-  }
-}
-
-.result:hover,
-.result-op.c-container.new-pmd:hover {
-  border: 2px solid rgb(0 186 145 / 60%) !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  transition: border 0.15s ease-in-out;
-}
-
-a[class*="foot-more"] {
-  margin-top: 8px;
-}
-
+/* 隐藏某些百度组件 */
 #wrapper #content_left .op-soft-title a:hover:after,
 #wrapper #content_left .result a:hover:after,
 #wrapper #content_left .result-op a:hover:after,
@@ -211,18 +103,153 @@ div[tpl="app/rs"],
 div[tpl="app/search-tool"],
 div[class*="fy-dictwisenew-mnemonic"],
 div[class*="video-wrap"],
-div[class*="exam_"] {
+div[class*="exam_"],
+/* 隐藏明星艺人打榜送花的百科 */
+.c-group-wrapper,
+.search-source-wrap,
+.ipt_rec,
+.quickdelete,
+div[class*="blog-more-wrap"],
+h3::before,
+div[class*="sourcebox_"],
+/* AI 总结结果样式优化 */
+div[tpl="wenda_index"] div[class*="interact-wrapper"],
+/* 百度文库结果样式优化 */
+div[tpl*="wenku_wenshu"] div[class*="footer"],
+div[tpl*="wenku_wenshu"] a[class*="check-more"],
+div[tpl="ms_mark"] div[class*="link-more_"],
+div[tpl="ms_number"] div[class*="link-more_"],
+div[class="cu-mt-sm-lg"],
+span[class*="detail-btn_"] {
   display: none !important;
 }
 
-.cu-border {
+/* 开发者搜索结果框单独适配 */
+div[tpl*="kaifa_"] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  & > h3 {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* 电话号码查询 */
+div[tpl="ms_mark"],
+div[tpl="ms_number"] {
+  & .new-pmd .c-gap-top-xsmall {
+    display: block !important;
+  }
+}
+
+/* 百度文库结果样式优化 */
+div[tpl*="wenku_wenshu"] {
+  & div[class*="info-wrap-new"] {
+    opacity: 0;
+  }
+}
+
+/* 疾病相关问题特别提醒 */
+div[tpl="ask_doctor"],
+div[tpl="wenda_abstract_pc"],
+div[tpl="med_disease_kg_collection_san"] {
+  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  padding: 15px !important;
+  &::after {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    content: "重要提示：您正在搜索疾病相关问题，请勿轻易相信网络结果，及时就医" !important;
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  &::before {
+    content: "" !important;
+  }
+}
+
+/* 结果框优化 */
+#container {
+  margin-left: unset !important;
   width: 100%;
 }
 
-/* 隐藏明星艺人打榜送花的百科 */
-.c-group-wrapper,
-.search-source-wrap {
-  display: none !important;
+/* 百度百科优化 */
+.cos-row .cos-col {
+  width: 15% !important;
+}
+.cu-border {
+  width: 100%;
+  padding: 0 0px 0px 20px !important;
+}
+
+.cu-border,
+div[class*="re-box"],
+table {
+  box-shadow: none !important;
+  width: 100%;
+}
+
+.result,
+.result-op.c-container.new-pmd {
+  border: 2px solid rgba(0, 0, 0, 0.1) !important;
+  width: 100%;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  transition: border 0.15s ease-in-out;
+}
+
+#container.sam_newgrid .c-container .t a,
+#container.sam_newgrid .c-container .c-title a {
+  text-decoration: none !important;
+}
+
+#wrapper #content_left .op-soft-title h3[class*="t"],
+#wrapper #content_left .result h3[class*="t"],
+#wrapper #content_left .result-op h3[class*="t"],
+#wrapper #content_left > .c-container h3[class*="t"],
+#wrapper #content_left > .c-container h3[class*="t"] {
+  background-color: #f8f8f8;
+  margin: 0px -8px 10px -20px;
+  padding: 8px 20px 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+#wrapper #rs,
+#wrapper #content_left .result,
+#wrapper #content_left .result-op,
+#wrapper #content_left > .c-container {
+  display: flex;
+  align-items: center;
+  & > div {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  /* 作兜底，某些结果一个会匹配不上*/
+  & > div > div {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
+.result:hover,
+.result-op.c-container.new-pmd:hover {
+  border: 2px solid rgb(0 186 145 / 60%) !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  transition: border 0.15s ease-in-out;
+}
+
+a[class*="foot-more"] {
+  margin-top: 8px;
 }
 
 #content_left {
@@ -377,25 +404,12 @@ div[tpl="ai_index"] {
   margin: 0px !important;
 }
 
-div[class*="blog-more-wrap"] {
-  display: none !important;
-}
-
-.cu-border,
-div[class*="re-box"],
-table {
-  box-shadow: none !important;
-  width: 100%;
-}
-
-h3::before {
-  display: none !important;
-}
-
-#wrapper #content_left .op-soft-title a,
+/* #wrapper #content_left .op-soft-title a,
 #wrapper #content_left .result a,
 #wrapper #content_left .result-op a,
-#wrapper #content_left > .c-container a {
+#wrapper #content_left > .c-container a, */
+#container.sam_newgrid .c-container .t a,
+#container.sam_newgrid .c-container .c-title a {
   color: #3979d3 !important;
 }
 
@@ -419,23 +433,31 @@ div[tpl] h3 > a {
 
 /* 提示部分 */
 div[tpl="sg_kg_entity_san"] h3::after {
-  font-size: 0.15rem;
-  color: #fff;
-  background: #24bb5b;
-  padding: 1px 5px;
-  margin: 0px 10px;
+  font-size: 12px;
+  color: #24bb5b;
+  border: 1px solid #24bb5b;
   content: "百科";
-  border-radius: 6px;
+  margin: 0 5px;
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-weight: normal;
+  height: 18px;
+  display: flex;
+  align-items: center;
 }
 
-div[tpl="dict3"] h3::after {
-  font-size: 0.15rem;
-  color: #fff;
-  background: #24bb5b;
-  padding: 1px 5px;
-  margin: 0px 10px;
+div[tpl*="fy_"] h3::after {
+  font-size: 12px;
+  color: #cb3f3f;
+  border: 1px solid #cb3f3f;
   content: "翻译";
-  border-radius: 6px;
+  margin: 0 5px;
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-weight: normal;
+  height: 18px;
+  display: flex;
+  align-items: center;
 }
 
 #b_header {
@@ -497,10 +519,6 @@ div :has(> .blockShow) {
   align-items: center;
   justify-content: space-evenly;
 }
-.ipt_rec,
-.quickdelete {
-  display: none !important;
-}
 
 div[class*="header_"] {
   position: relative;
@@ -508,16 +526,29 @@ div[class*="header_"] {
 }
 
 a.c-text {
-  position: absolute!important;
-  right: 20px!important;
-  margin: 0!important;
-  top: 5px!important;
-  border-radius: 5px!important;
+  position: absolute !important;
+  right: 20px !important;
+  margin: 0 !important;
+  top: 5px !important;
+  border-radius: 5px !important;
   padding: 1px 6px !important;
-  color: #fff !important;
+  color: #3476d2 !important;
+  background: #fff !important;
   transition: all 0.25s ease-in-out;
 
   &:hover {
-    color: #3476d2!important;
+    color: #3476d2 !important;
+  }
+}
+span.c-text {
+  margin: 0 !important;
+  border-radius: 5px !important;
+  padding: 1px 6px !important;
+  color: #3476d2 !important;
+  background: #fff !important;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    color: #3476d2 !important;
   }
 }
