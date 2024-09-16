@@ -1,4 +1,41 @@
-/* 2024.8.27 更新 */
+/* 2024.9.16 更新 */
+
+:root {
+  --baidu-background-color: #f5f5f5;
+  --head-background-color: rgba(248, 248, 248, 0.4);
+  --content-text-color: #a9a9a9;
+  --result-text-color: #333;
+  --result-background-color: #fff;
+  --result-title-background-color: #f8f8f8;
+  --result-highlight-text-color: #ea4335;
+  --search-background-color: #fff;
+  --search-border-color: #d1d5db;
+  --search-text-color: #6b7280;
+  --pagination-background-color: #d8d8d8;
+  --pagination-text-color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --baidu-background-color: #1f1f1f;
+    --head-background-color: rgba(137, 137, 137, 0.4);
+    --content-text-color: #4e4e4e;
+    --result-text-color: #4e4e4e;
+    --result-background-color: #bfbfbf;
+    --result-title-background-color: #bfbfbf;
+    --result-highlight-text-color: #b53e34;
+    --search-background-color: #545454;
+    --search-border-color: #616161;
+    --search-text-color: #dadada;
+    --pagination-background-color: #474747;
+    --pagination-text-color: #fff;
+  }
+}
+
+body[baidu] {
+  background-color: var(--baidu-background-color) !important;
+  transition: background-color 0.25s ease-in-out;
+}
 
 /* 隐藏所有无用的的百度服务 */
 div[tpl*="game"],
@@ -38,6 +75,7 @@ div[tpl="wenda_abstract_pc"],
 div[tpl="aladdin_wenku_pc_new"] > div,
 div[tql*="wenku"],
 div[tpl="jr_stock_comment_san"],
+div[tpl="jr_stock_pc"],
 div[tpl="ybb"],
 div[tpl="med_disease_kg_collection_san"],
 div[tpl="live_converge_san"],
@@ -53,7 +91,7 @@ div[tpl="generaltable"] {
 
   &::after {
     content: "匹配到的规则:" attr(tpl);
-    color: #a9a9a9;
+    color: var(--content-text-color);
     text-align: right;
     width: 50%;
   }
@@ -182,6 +220,10 @@ div[tpl="med_disease_kg_collection_san"] {
   width: 100%;
 }
 
+em {
+  color: var(--result-highlight-text-color) !important;
+}
+
 /* 百度百科优化 */
 .cos-row .cos-col {
   width: 15% !important;
@@ -217,7 +259,7 @@ table {
 #wrapper #content_left .result-op h3[class*="t"],
 #wrapper #content_left > .c-container h3[class*="t"],
 #wrapper #content_left > .c-container h3[class*="t"] {
-  background-color: #f8f8f8;
+  background-color: var(--result-title-background-color) !important;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
   border-radius: 5px 5px 0 0;
@@ -229,6 +271,8 @@ table {
 #wrapper #content_left > .c-container {
   display: flex;
   align-items: center;
+  background-color: var(--result-background-color) !important;
+  color: var(--result-text-color) !important;
   & > div {
     margin: 0 !important;
     width: 100% !important;
@@ -297,13 +341,13 @@ a[class*="foot-more"] {
 #wrapper #kw {
   outline-width: 0px;
   outline-style: solid;
-  color: rgba(107, 114, 128, 1);
+  color: var(--search-text-color);
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0px 0px 0px rgb(182 182 182 / 20%),
     0 0px 0px 0px rgb(182 182 182 / 20%);
   padding: 5px 10px;
-  background-color: rgb(255 255 255 / 1);
-  border-color: rgb(209, 213, 219);
+  background-color: var(--search-background-color);
+  border-color: var(--search-border-color);
   border-width: 1px !important;
   border-radius: 7px;
   border-style: solid;
@@ -332,7 +376,8 @@ a[class*="foot-more"] {
   padding: 0;
 }
 
-.wrapper_new #form .bdsug-new ul {
+.wrapper_new #form .bdsug-new ul,
+.c-gray:hover {
   border: none !important;
 }
 
@@ -389,7 +434,7 @@ div[tpl="dict3"] {
 body {
   min-width: unset !important;
   & #head {
-    background: rgba(248, 248, 248, 0.4) !important;
+    background-color: var(--head-background-color) !important;
     border-bottom: none !important;
     backdrop-filter: blur(10px) !important;
   }
@@ -502,7 +547,7 @@ div :has(> .blockShow) {
     position: absolute;
     right: 0.2rem;
     content: "自主拦截域名 - 点击标题显示结果";
-    color: #a9a9a9;
+    color: var(--content-text-color);
   }
 }
 
@@ -551,4 +596,11 @@ span.c-text {
   &:hover {
     color: #3476d2 !important;
   }
+}
+
+.result-molecule #page > div a,
+.result-molecule #page > div strong {
+  background: var(--pagination-background-color);
+  color: var(--pagination-text-color) !important;
+  border-radius: 7px;
 }
