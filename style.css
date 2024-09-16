@@ -364,6 +364,10 @@ a[class*="foot-more"] {
   transition: all 0.2s ease-in-out;
 }
 
+.wrapper_new #head {
+  background: var(--head-background-color) !important;
+}
+
 .wrapper_new.wrapper_s #form .bdsug-new,
 .wrapper_new #form .bdsug-new {
   width: fit-content !important;
