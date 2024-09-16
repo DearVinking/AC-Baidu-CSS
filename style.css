@@ -24,7 +24,7 @@
     --result-text-color: #c5c5c5;
     --result-border-color: rgba(201, 201, 201, 0.1);
     --result-background-color: #2c2c2c;
-    --result-title-background-color: #2c2c2c;
+    --result-title-background-color: #3f3f3f;
     --result-highlight-text-color: #b53e34;
     --search-background-color: #303030;
     --search-border-color: #616161;
@@ -36,7 +36,6 @@
 
 body[baidu] {
   background-color: var(--baidu-background-color) !important;
-  /* transition: background-color 0.25s ease-in-out; */
 }
 
 *:not(a) {
@@ -87,9 +86,13 @@ div[tpl="med_disease_kg_collection_san"],
 div[tpl="live_converge_san"],
 div[tpl="sp_purc_pc"],
 div[tpl="ins_application_card"],
-div[tpl="generaltable"] {
+div[tpl="generaltable"],
+/* 屏蔽垃圾 AI */
+div[tpl="wenda_generate"] {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
+  /* 覆盖 AI 总结框的固定高度 */
+  height: unset !important;
 
   & > * {
     display: none !important;
