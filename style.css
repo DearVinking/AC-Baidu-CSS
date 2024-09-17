@@ -87,6 +87,7 @@ div[tpl="live_converge_san"],
 div[tpl="sp_purc_pc"],
 div[tpl="ins_application_card"],
 div[tpl="generaltable"],
+div[tpl*="wenzhen"],
 /* 屏蔽垃圾 AI */
 div[tpl="wenda_generate"] {
   margin: 0 0 10px !important;
@@ -193,17 +194,14 @@ div[tpl="ms_number"] {
 /* 百度文库结果样式优化 */
 div[tpl*="wenku_wenshu"] {
   & div[class*="info-wrap-new"] {
-    opacity: 0;
+    display: none;
   }
 }
 
 /* 疾病相关问题特别提醒 */
-div[tpl="ask_doctor"],
+div[tpl*="doctor"],
 div[tpl="wenda_abstract_pc"],
 div[tpl="med_disease_kg_collection_san"] {
-  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
   -webkit-box-align: center !important;
   -ms-flex-align: center !important;
@@ -211,15 +209,15 @@ div[tpl="med_disease_kg_collection_san"] {
   padding: 15px !important;
   &::after {
     font-size: 15px;
-    font-weight: bold;
-    color: #fff;
+    /* font-weight: bold; */
+    color: var(--result-highlight-text-color) !important;
     content: "重要提示：您正在搜索疾病相关问题，请勿轻易相信网络结果，及时就医" !important;
-    display: block !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
+    width: 100% !important;
+    text-align: center !important;
   }
   &::before {
     content: "" !important;
+    width: unset !important;
   }
 }
 
@@ -238,9 +236,9 @@ div[class*="orginal-bg_"] {
 }
 
 /* 百度百科优化 */
-.cos-row .cos-col {
+/* .cos-row .cos-col {
   width: 15% !important;
-}
+} */
 .cu-border {
   width: 100%;
   padding: 0 0px 0px 20px !important;
@@ -275,13 +273,13 @@ table {
   background-color: var(--result-title-background-color) !important;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
-  border-radius: 5px 5px 0 0;
 }
 
 #wrapper #rs,
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
 #wrapper #content_left > .c-container {
+  overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--result-background-color) !important;
@@ -293,7 +291,10 @@ table {
   /* 作兜底，某些结果一个会匹配不上*/
   & > div > div {
     margin: 0 !important;
-    width: 100% !important;
+    padding: 0 !important;
+  }
+  & div[class*="item-wrap"] {
+    height: unset !important;
   }
 }
 
@@ -402,7 +403,7 @@ a[class*="foot-more"] {
   padding: 1px 15px !important;
   margin: 0 !important;
   transition: background-color, opacity 0.15s ease-in-out;
-  opacity: 0.5;
+  opacity: 0.7;
   &:hover {
     opacity: 1;
     background-color: var(--pagination-background-color) !important;
