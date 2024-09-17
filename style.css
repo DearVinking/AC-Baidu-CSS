@@ -88,6 +88,7 @@ div[tpl="sp_purc_pc"],
 div[tpl="ins_application_card"],
 div[tpl="generaltable"],
 div[tpl*="wenzhen"],
+div[tpl="jr_ai_echo"],
 /* 屏蔽垃圾 AI */
 div[tpl="wenda_generate"] {
   margin: 0 0 10px !important;
