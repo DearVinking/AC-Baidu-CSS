@@ -1,4 +1,4 @@
-/* 2024.9.17 更新 */
+/* 2024.9.21 更新 */
 
 :root {
   --baidu-background-color: #f5f5f5;
@@ -90,7 +90,8 @@ div[tpl="generaltable"],
 div[tpl*="wenzhen"],
 div[tpl="jr_ai_echo"],
 /* 屏蔽垃圾 AI */
-div[tpl="wenda_generate"] {
+div[tpl="wenda_generate"],
+div[tpl="ai_agent_distribute"] {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
   /* 覆盖 AI 总结框的固定高度 */
@@ -289,10 +290,11 @@ table {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* 作兜底，某些结果一个会匹配不上*/
+  /* 作兜底，防止某些结果匹配不上*/
   & > div > div {
     margin: 0 !important;
     padding: 0 !important;
+    width: 100% !important;
   }
   & div[class*="item-wrap"] {
     height: unset !important;
@@ -564,12 +566,6 @@ div[tpl*="fy_"] h3::after {
   width: 0;
 }
 
-/* 插件样式输入框优化 */
-#sp-ac-userstyleTEXT {
-  min-width: 100%;
-  min-height: 300px;
-  margin-left: unset !important;
-}
 
 *[ac-needhide] .blockShow:hover {
   border: none;
