@@ -289,12 +289,14 @@ table {
   & > div {
     margin: 0 !important;
     width: 100% !important;
+    box-shadow: none;
   }
   /* 作兜底，防止某些结果匹配不上*/
   & > div > div {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
+    box-shadow: none;
   }
   & div[class*="item-wrap"] {
     height: unset !important;
