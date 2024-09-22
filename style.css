@@ -480,13 +480,16 @@ body {
   }
 }
 
+/* 作兜底，防止解除屏蔽样式有问题 */
 div[tpl="ai_index"] {
-  padding: 10px !important;
+  padding: 10px 20px !important;
 }
+
 #wrapper #content_left > .c-container[tpl="wenda_generate"],
 #wrapper #content_left > .c-container[tpl="ai_index"] {
   height: unset !important;
 }
+
 .wd-ai-index-pc {
   width: 100% !important;
   margin: 0px !important;
