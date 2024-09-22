@@ -90,6 +90,7 @@ div[tpl="generaltable"],
 div[tpl*="wenzhen"],
 div[tpl="jr_ai_echo"],
 /* 屏蔽垃圾 AI */
+div[tpl="ai_index"],
 div[tpl="wenda_generate"],
 div[tpl="ai_agent_distribute"] {
   margin: 0 0 10px !important;
@@ -482,7 +483,10 @@ body {
 div[tpl="ai_index"] {
   padding: 10px !important;
 }
-
+#wrapper #content_left > .c-container[tpl="wenda_generate"],
+#wrapper #content_left > .c-container[tpl="ai_index"] {
+  height: unset !important;
+}
 .wd-ai-index-pc {
   width: 100% !important;
   margin: 0px !important;
@@ -567,7 +571,6 @@ div[tpl*="fy_"] h3::after {
 #container.sam_newgrid th:nth-child(1) {
   width: 0;
 }
-
 
 *[ac-needhide] .blockShow:hover {
   border: none;
