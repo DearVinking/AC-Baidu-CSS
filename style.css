@@ -92,8 +92,7 @@ div[tpl="jr_ai_echo"],
 /* 屏蔽垃圾 AI */
 div[tpl="ai_index"],
 div[tpl="wenda_generate"],
-div[tpl="ai_agent_distribute"],
-#top-ad {
+div[tpl="ai_agent_distribute"] {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
   /* 覆盖 AI 总结框的固定高度 */
@@ -172,7 +171,8 @@ div[tpl*="wenku_wenshu"] a[class*="check-more"],
 div[tpl="ms_mark"] div[class*="link-more_"],
 div[tpl="ms_number"] div[class*="link-more_"],
 div[class="cu-mt-sm-lg"],
-span[class*="detail-btn_"] {
+span[class*="detail-btn_"],
+#top-ad {
   display: none !important;
 }
 
