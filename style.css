@@ -92,7 +92,8 @@ div[tpl="jr_ai_echo"],
 /* 屏蔽垃圾 AI */
 div[tpl="ai_index"],
 div[tpl="wenda_generate"],
-div[tpl="ai_agent_distribute"] {
+div[tpl="ai_agent_distribute"],
+#top-ad {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
   /* 覆盖 AI 总结框的固定高度 */
