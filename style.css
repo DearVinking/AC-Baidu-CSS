@@ -36,6 +36,7 @@
 
 body[baidu] {
   background-color: var(--baidu-background-color) !important;
+  font-family: PingFang SC;
 }
 
 *:not(a) {
