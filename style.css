@@ -36,11 +36,13 @@
 
 body[baidu] {
   background-color: var(--baidu-background-color) !important;
-  font-family: PingFang SC;
 }
 
-*:not(a) {
-  color: var(--result-text-color) !important;
+* {
+  font-family: PingFang SC!important;
+  &:not(a){
+    color: var(--result-text-color) !important;
+  }
 }
 
 /* 隐藏所有无用的的百度服务 */
