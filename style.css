@@ -39,8 +39,9 @@ body[baidu] {
 }
 
 * {
-  font-family: PingFang SC!important;
-  &:not(a){
+  font-family: PingFang SC !important;
+
+  &:not(a) {
     color: var(--result-text-color) !important;
   }
 }
@@ -80,7 +81,7 @@ div[tpl="open_source_software"],
 div[tpl="pc-soft-app"],
 div[tpl="vmp_newproject_new"],
 div[tpl="wenda_abstract_pc"],
-div[tpl="aladdin_wenku_pc_new"] > div,
+div[tpl="aladdin_wenku_pc_new"]>div,
 div[tql*="wenku"],
 div[tpl="jr_stock_comment_san"],
 div[tpl="jr_stock_pc"],
@@ -101,7 +102,7 @@ div[tpl="ai_agent_distribute"] {
   /* 覆盖 AI 总结框的固定高度 */
   height: unset !important;
 
-  & > * {
+  &>* {
     display: none !important;
   }
 
@@ -122,11 +123,11 @@ div[tpl="ai_agent_distribute"] {
 #wrapper #content_left .op-soft-title a:hover:after,
 #wrapper #content_left .result a:hover:after,
 #wrapper #content_left .result-op a:hover:after,
-#wrapper #content_left > .c-container a:hover:after,
+#wrapper #content_left>.c-container a:hover:after,
 #wrapper #content_left .op-soft-title a:visited:hover:after,
 #wrapper #content_left .result a:visited:hover:after,
 #wrapper #content_left .result-op a:visited:hover:after,
-#wrapper #content_left > .c-container a:visited:hover:after,
+#wrapper #content_left>.c-container a:visited:hover:after,
 .pf,
 .s-top-username,
 .selected-search-box,
@@ -184,7 +185,8 @@ div[tpl*="kaifa_"] {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  & > h3 {
+
+  &>h3 {
     width: 100%;
     margin: 0;
   }
@@ -214,6 +216,7 @@ div[tpl="med_disease_kg_collection_san"] {
   -ms-flex-align: center !important;
   align-items: center !important;
   padding: 15px !important;
+
   &::after {
     font-size: 15px;
     /* font-weight: bold; */
@@ -222,6 +225,7 @@ div[tpl="med_disease_kg_collection_san"] {
     width: 100% !important;
     text-align: center !important;
   }
+
   &::before {
     content: "" !important;
     width: unset !important;
@@ -275,8 +279,8 @@ table {
 #wrapper #content_left .op-soft-title h3[class*="t"],
 #wrapper #content_left .result h3[class*="t"],
 #wrapper #content_left .result-op h3[class*="t"],
-#wrapper #content_left > .c-container h3[class*="t"],
-#wrapper #content_left > .c-container h3[class*="t"] {
+#wrapper #content_left>.c-container h3[class*="t"],
+#wrapper #content_left>.c-container h3[class*="t"] {
   background-color: var(--result-title-background-color) !important;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
@@ -285,24 +289,27 @@ table {
 #wrapper #rs,
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
-#wrapper #content_left > .c-container {
+#wrapper #content_left>.c-container {
   overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--result-background-color) !important;
   color: var(--result-text-color) !important;
-  & > div {
+
+  &>div {
     margin: 0 !important;
     width: 100% !important;
     box-shadow: none;
   }
+
   /* 作兜底，防止某些结果匹配不上*/
-  & > div > div {
+  &>div>div {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
     box-shadow: none;
   }
+
   & div[class*="item-wrap"] {
     height: unset !important;
   }
@@ -395,6 +402,7 @@ a[class*="foot-more"] {
 .wrapper_new.wrapper_s #form .bdsug-new,
 .wrapper_new #form .bdsug-new {
   width: fit-content !important;
+  min-width: 600px;
   border: 2px solid var(--result-border-color) !important;
   border-radius: 7px;
   background: var(--result-background-color);
@@ -414,6 +422,7 @@ a[class*="foot-more"] {
   margin: 0 !important;
   transition: background-color, opacity 0.15s ease-in-out;
   opacity: 0.7;
+
   &:hover {
     opacity: 1;
     background-color: var(--pagination-background-color) !important;
@@ -431,7 +440,8 @@ a[class*="foot-more"] {
   display: flex;
   gap: 20px;
   align-items: center;
-  & > #myuser {
+
+  &>#myuser {
     margin: 0 !important;
   }
 }
@@ -442,13 +452,14 @@ a[class*="foot-more"] {
 
 .wrapper_new #u {
   margin: 0 !important;
-  padding: 10px 16px 0 0;
+  padding: 0 !important;
   height: 70px !important;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+
   & #s-top-loginbtn,
   & #user {
     padding: 0 !important;
@@ -477,6 +488,7 @@ div[tpl="dict3"] {
 
 body {
   min-width: unset !important;
+
   & #head {
     background-color: var(--head-background-color) !important;
     border-bottom: none !important;
@@ -489,8 +501,8 @@ div[tpl="ai_index"] {
   padding: 10px 20px !important;
 }
 
-#wrapper #content_left > .c-container[tpl="wenda_generate"],
-#wrapper #content_left > .c-container[tpl="ai_index"] {
+#wrapper #content_left>.c-container[tpl="wenda_generate"],
+#wrapper #content_left>.c-container[tpl="ai_index"] {
   height: unset !important;
 }
 
@@ -515,7 +527,7 @@ div[tpl] h3 {
   align-items: center;
 }
 
-div[tpl] h3 > a {
+div[tpl] h3>a {
   margin: 0px;
 }
 
@@ -560,14 +572,14 @@ div[tpl*="fy_"] h3::after {
   background-color: transparent !important;
 }
 
-#b_content #b_results > li:not(#mfa_root) {
+#b_content #b_results>li:not(#mfa_root) {
   border: 2px solid var(--result-border-color) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
   transition: border 0.15s ease-in-out;
 }
 
-#b_content #b_results > li:not(#mfa_root):hover {
+#b_content #b_results>li:not(#mfa_root):hover {
   border: 2px solid rgb(0 186 145 / 60%) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
@@ -628,6 +640,7 @@ a.c-text {
     color: #3476d2 !important;
   }
 }
+
 span.c-text {
   margin: 0 !important;
   border-radius: 5px !important;
@@ -641,8 +654,8 @@ span.c-text {
   }
 }
 
-.result-molecule #page > div a,
-.result-molecule #page > div strong {
+.result-molecule #page>div a,
+.result-molecule #page>div strong {
   background: var(--pagination-background-color);
   color: var(--pagination-text-color) !important;
   border-radius: 7px;
