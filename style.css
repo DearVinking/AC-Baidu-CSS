@@ -1,4 +1,4 @@
-/* 2024.10.22 更新 */
+/* 2024.10.23 更新 */
 
 :root {
   --baidu-background-color: #f5f5f5;
@@ -101,6 +101,7 @@ div[tpl="generaltable"],
 div[tpl*="wenzhen"],
 div[tpl="jr_ai_echo"],
 div[tpl="rel_base_head"],
+div[tpl="ms_mortise_dbqa_san"],
 /* 屏蔽垃圾 AI */
 div[tpl="ai_index"],
 div[tpl="wenda_generate"],
