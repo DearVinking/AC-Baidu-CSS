@@ -1,4 +1,4 @@
-/* 2024.10.23 更新 */
+/* 2024.12.10 更新 */
 
 :root {
   --baidu-background-color: #f5f5f5;
@@ -46,10 +46,10 @@ body[baidu] {
 }
 
 * {
-  font-family: PingFang SC !important;
+  font-family: -apple-system, 'HarmonyOS Sans SC', system-ui, Microsoft YaHei, Helvetica, Noto, Helvetica, Arial, sans-serif !important;
 
   &:not(a) {
-    color: var(--result-text-color) !important;
+    color: var(--result-text-color);
   }
 }
 
@@ -185,7 +185,8 @@ div[tpl="ms_mark"] div[class*="link-more_"],
 div[tpl="ms_number"] div[class*="link-more_"],
 div[class="cu-mt-sm-lg"],
 span[class*="detail-btn_"],
-#top-ad {
+#top-ad,
+.new-pmd .sitelink_summary {
   display: none !important;
 }
 
@@ -256,9 +257,10 @@ div[class*="orginal-bg_"] {
 }
 
 /* 百度百科优化 */
-/* .cos-row .cos-col {
+.cos-row .cos-col {
   width: 15% !important;
-} */
+}
+
 .cu-border {
   width: 100%;
   padding: 0 0px 0px 20px !important;
@@ -266,7 +268,8 @@ div[class*="orginal-bg_"] {
 
 .cu-border,
 div[class*="re-box"],
-table {
+table,
+.cosc-card-shadow {
   box-shadow: none !important;
   width: 100%;
 }
@@ -281,7 +284,9 @@ table {
 }
 
 #container.sam_newgrid .c-container .t a,
-#container.sam_newgrid .c-container .c-title a {
+#container.sam_newgrid .c-container .c-title a,
+#container.sam_newgrid .c-container .t a em,
+#container.sam_newgrid .c-container .c-title a em {
   text-decoration: none !important;
 }
 
@@ -526,7 +531,11 @@ div[tpl="ai_index"] {
 #wrapper #content_left > .c-container a, */
 #container.sam_newgrid .c-container .t a,
 #container.sam_newgrid .c-container .c-title a {
-  color: #3979d3 !important;
+  & *:not(em) {
+    color: #3979d3 !important;
+    font-weight: bold;
+    font-size: 16px;
+  }
 }
 
 /* 百度相关结果后追加提示 */
