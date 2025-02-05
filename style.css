@@ -46,7 +46,8 @@ body[baidu] {
 }
 
 * {
-  font-family: -apple-system, 'HarmonyOS Sans SC', system-ui, Microsoft YaHei, Helvetica, Noto, Helvetica, Arial, sans-serif !important;
+  font-family: -apple-system, "HarmonyOS Sans SC", system-ui, Microsoft YaHei,
+    Helvetica, Noto, Helvetica, Arial, sans-serif !important;
 
   &:not(a) {
     color: var(--result-text-color);
@@ -105,13 +106,16 @@ div[tpl="ms_mortise_dbqa_san"],
 /* 屏蔽垃圾 AI */
 div[tpl="ai_index"],
 div[tpl="wenda_generate"],
-div[tpl="ai_agent_distribute"] {
+div[tpl="ai_agent_distribute"],
+div[tpl="note_lead"],
+div[tpl="ai_search_recommend"],
+div[tpl="yl_figure_sample"] {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
   /* 覆盖 AI 总结框的固定高度 */
   height: unset !important;
 
-  &>* {
+  & > * {
     display: none !important;
   }
 
@@ -186,7 +190,9 @@ div[tpl="ms_number"] div[class*="link-more_"],
 div[class="cu-mt-sm-lg"],
 span[class*="detail-btn_"],
 #top-ad,
-.new-pmd .sitelink_summary {
+.new-pmd .sitelink_summary,
+.cosc-card-horizontal-gradient,
+div[data-module="header"] {
   display: none !important;
 }
 
@@ -196,7 +202,7 @@ div[tpl*="kaifa_"] {
   flex-direction: column;
   overflow: hidden;
 
-  &>h3 {
+  & > h3 {
     width: 100%;
     margin: 0;
   }
@@ -250,6 +256,16 @@ div[tpl="med_disease_kg_collection_san"] {
 
 em {
   color: var(--result-highlight-text-color) !important;
+  font-weight: bold;
+}
+
+span[class*="under-line_"] {
+  color: var(--result-highlight-text-color) !important;
+}
+
+span[class*="mean-text_"],
+span[class*="phrase-text_1u3Zc"] {
+  color: var(--result-text-color) !important;
 }
 
 div[class*="orginal-bg_"] {
@@ -259,6 +275,10 @@ div[class*="orginal-bg_"] {
 /* 百度百科优化 */
 .cos-row .cos-col {
   width: 15% !important;
+}
+
+div[class*="pc-slink-button_"] {
+  display: none !important;
 }
 
 .cu-border {
@@ -293,8 +313,8 @@ table,
 #wrapper #content_left .op-soft-title h3[class*="t"],
 #wrapper #content_left .result h3[class*="t"],
 #wrapper #content_left .result-op h3[class*="t"],
-#wrapper #content_left>.c-container h3[class*="t"],
-#wrapper #content_left>.c-container h3[class*="t"] {
+#wrapper #content_left > .c-container h3[class*="t"],
+#wrapper #content_left > .c-container h3[class*="t"] {
   background-color: var(--result-title-background-color) !important;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
@@ -303,21 +323,27 @@ table,
 #wrapper #rs,
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
-#wrapper #content_left>.c-container {
+#wrapper #content_left > .c-container {
   overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--result-background-color) !important;
   color: var(--result-text-color) !important;
 
-  &>div {
+  & > div {
     margin: 0 !important;
     width: 100% !important;
     box-shadow: none;
   }
 
   /* 作兜底，防止某些结果匹配不上*/
-  &>div>div {
+  & > div > div {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    box-shadow: none;
+  }
+  & .cosc-card-shadow {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
@@ -326,6 +352,9 @@ table,
 
   & div[class*="item-wrap"] {
     height: unset !important;
+  }
+  & div[class*="content-limit_"] {
+    min-height: unset !important;
   }
 }
 
@@ -436,10 +465,14 @@ a[class*="foot-more"] {
   margin: 0 !important;
   transition: background-color, opacity 0.15s ease-in-out;
   opacity: 0.7;
+  color: var(--result-text-color) !important;
 
   &:hover {
     opacity: 1;
     background-color: var(--pagination-background-color) !important;
+  }
+  & b {
+    color: var(--result-text-color);
   }
 }
 
@@ -455,7 +488,7 @@ a[class*="foot-more"] {
   gap: 20px;
   align-items: center;
 
-  &>#myuser {
+  & > #myuser {
     margin: 0 !important;
   }
 }
@@ -515,8 +548,8 @@ div[tpl="ai_index"] {
   padding: 10px 20px !important;
 }
 
-#wrapper #content_left>.c-container[tpl="wenda_generate"],
-#wrapper #content_left>.c-container[tpl="ai_index"] {
+#wrapper #content_left > .c-container[tpl="wenda_generate"],
+#wrapper #content_left > .c-container[tpl="ai_index"] {
   height: unset !important;
 }
 
@@ -545,7 +578,7 @@ div[tpl] h3 {
   align-items: center;
 }
 
-div[tpl] h3>a {
+div[tpl] h3 > a {
   margin: 0px;
 }
 
@@ -590,14 +623,14 @@ div[tpl*="fy_"] h3::after {
   background-color: transparent !important;
 }
 
-#b_content #b_results>li:not(#mfa_root) {
+#b_content #b_results > li:not(#mfa_root) {
   border: 2px solid var(--result-border-color) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
   transition: border 0.15s ease-in-out;
 }
 
-#b_content #b_results>li:not(#mfa_root):hover {
+#b_content #b_results > li:not(#mfa_root):hover {
   border: 2px solid rgb(0 186 145 / 60%) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
@@ -672,8 +705,8 @@ span.c-text {
   }
 }
 
-.result-molecule #page>div a,
-.result-molecule #page>div strong {
+.result-molecule #page > div a,
+.result-molecule #page > div strong {
   background: var(--pagination-background-color);
   color: var(--pagination-text-color) !important;
   border-radius: 7px;
@@ -683,3 +716,17 @@ span.c-text {
 #content_right {
   display: none;
 }
+
+/* AI 框样式 */
+div[class*="dqa-content_"] {
+  max-height: unset !important;
+}
+
+.cos-divider,
+.cos-swiper,
+div[data-show="more"] {
+  display: none !important;
+}
+/* div[tpl="wenda_index"] :not(.marklang) {
+  display: none;
+} */
