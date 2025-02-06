@@ -63,9 +63,7 @@ body {
 
 em {
   color: var(--result-highlight-text-color) !important;
-  &[] {
-    font-weight: var(--font-weight);
-  }
+  font-weight: var(--font-weight);
 }
 
 * {
