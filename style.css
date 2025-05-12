@@ -153,7 +153,7 @@ div[tpl="car_brand_kg_ideal"] {
   /* 覆盖 AI 总结框的固定高度 */
   height: unset !important;
 
-  & > * {
+  &>* {
     display: none !important;
   }
 
@@ -230,7 +230,8 @@ span[class*="detail-btn_"],
 #top-ad,
 .new-pmd .sitelink_summary,
 .cosc-card-horizontal-gradient,
-div[data-module="header"] {
+div[data-module="header"],
+a[data-module="aicreate"] {
   display: none !important;
 }
 
@@ -263,8 +264,8 @@ div[data-module="header"] {
 #wrapper #content_left .op-soft-title h3[class*="t"],
 #wrapper #content_left .result h3[class*="t"],
 #wrapper #content_left .result-op h3[class*="t"],
-#wrapper #content_left > .c-container h3[class*="t"],
-#wrapper #content_left > .c-container h3[class*="t"] {
+#wrapper #content_left>.c-container h3[class*="t"],
+#wrapper #content_left>.c-container h3[class*="t"] {
   background-color: var(--result-title-background-color) !important;
   margin: 0px -8px 10px -20px;
   padding: 8px 20px 5px;
@@ -273,26 +274,27 @@ div[data-module="header"] {
 #wrapper #rs,
 #wrapper #content_left .result,
 #wrapper #content_left .result-op,
-#wrapper #content_left > .c-container {
+#wrapper #content_left>.c-container {
   overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--result-background-color) !important;
   color: var(--result-text-color) !important;
 
-  & > div {
+  &>div {
     margin: 0 !important;
     width: 100% !important;
     box-shadow: none;
   }
 
   /* 作兜底，防止某些结果匹配不上*/
-  & > div > div {
+  &>div>div {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
     box-shadow: none;
   }
+
   & .cosc-card-shadow {
     margin: 0 !important;
     padding: 0 !important;
@@ -303,6 +305,7 @@ div[data-module="header"] {
   & div[class*="item-wrap"] {
     height: unset !important;
   }
+
   & div[class*="content-limit_"] {
     min-height: unset !important;
   }
@@ -321,14 +324,14 @@ div[data-module="header"] {
   background-color: transparent !important;
 }
 
-#b_content #b_results > li:not(#mfa_root) {
+#b_content #b_results>li:not(#mfa_root) {
   border: 2px solid var(--result-border-color) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
   transition: border 0.15s ease-in-out;
 }
 
-#b_content #b_results > li:not(#mfa_root):hover {
+#b_content #b_results>li:not(#mfa_root):hover {
   border: 2px solid rgb(0 186 145 / 60%) !important;
   box-shadow: none !important;
   border-radius: 6px !important;
@@ -346,7 +349,7 @@ div[tpl] h3 {
   align-items: center;
 }
 
-div[tpl] h3 > a {
+div[tpl] h3>a {
   margin: 0px;
 }
 
@@ -356,7 +359,7 @@ div[tpl*="kaifa_"] {
   flex-direction: column;
   overflow: hidden;
 
-  & > h3 {
+  &>h3 {
     width: 100%;
     margin: 0;
   }
@@ -371,6 +374,7 @@ div[tpl*="kaifa_"] {
 h3[class*="music-titlejx_"] {
   display: none !important;
 }
+
 h3[class*="music-list-title_"] {
   width: 100% !important;
   max-width: unset !important;
@@ -383,6 +387,7 @@ div[class*="songs-content_"] {
   width: 100% !important;
   box-shadow: none !important;
 }
+
 div[class*="swiper-content_"] {
   align-content: space-around !important;
 }
@@ -432,21 +437,6 @@ div[tpl="med_disease_kg_collection_san"] {
   }
 }
 
-/* 百度翻译结果样式优化 */
-div[tpl*="fy_"] h3::after {
-  font-size: 12px;
-  color: #cb3f3f;
-  border: 1px solid #cb3f3f;
-  content: "翻译";
-  margin: 0 5px;
-  border-radius: 5px;
-  padding: 1px 6px;
-  font-weight: normal;
-  height: 18px;
-  display: flex;
-  align-items: center;
-}
-
 span[class*="under-line_"] {
   color: var(--result-highlight-text-color) !important;
 }
@@ -486,8 +476,8 @@ div[tpl="ai_index"] {
   padding: 10px 20px !important;
 }
 
-#wrapper #content_left > .c-container[tpl="wenda_generate"],
-#wrapper #content_left > .c-container[tpl="ai_index"] {
+#wrapper #content_left>.c-container[tpl="wenda_generate"],
+#wrapper #content_left>.c-container[tpl="ai_index"] {
   height: unset !important;
 }
 
@@ -512,7 +502,7 @@ div[tpl="sg_kg_entity_san"] h3::after {
 }
 
 .cos-row .cos-col {
-  width: 15% !important;
+  width: 15%;
 }
 
 div[class*="pc-slink-button_"] {
@@ -553,6 +543,7 @@ a[class*="foot-more"] {
 .bdsug.bdsug-new {
   width: 528px !important;
 }
+
 #normalSugSearchUl {
   margin: 0 !important;
   padding: 0 !important;
@@ -569,6 +560,7 @@ a[class*="foot-more"] {
     opacity: 1;
     background-color: var(--pagination-background-color) !important;
   }
+
   & b {
     color: var(--result-text-color);
   }
@@ -738,8 +730,8 @@ span.c-text {
   }
 }
 
-.result-molecule #page > div a,
-.result-molecule #page > div strong {
+.result-molecule #page>div a,
+.result-molecule #page>div strong {
   background: var(--pagination-background-color);
   color: var(--pagination-text-color) !important;
   border-radius: 7px;
@@ -765,7 +757,7 @@ span.c-text {
   gap: 20px;
   align-items: center;
 
-  & > #myuser {
+  &>#myuser {
     margin: 0 !important;
   }
 }
