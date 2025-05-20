@@ -71,7 +71,7 @@ em {
     Helvetica, Noto, Helvetica, Arial, sans-serif !important;
 
   &:not(a) {
-    color: var(--result-text-color);
+    color: var(--result-text-color)!important;
   }
 }
 
@@ -240,7 +240,8 @@ a[data-module="aicreate"] {
    ======================== */
 
 /* 结果框优化 */
-#container {
+#container,
+div[class*="title-box"]{
   margin-left: unset !important;
   width: 100%;
 }
