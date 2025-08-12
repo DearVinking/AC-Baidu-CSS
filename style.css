@@ -531,6 +531,11 @@ a[class*="foot-more"] {
 /* ========================
    导航栏和搜索框样式
    ======================== */
+.head_wrapper{
+   display: flex;
+   justify-content: center;
+}
+
 
 #form.has-soutu .quickdelete {
   right: 10px !important;
