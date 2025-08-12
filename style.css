@@ -147,7 +147,8 @@ div[tpl="ai_search_recommend"],
 div[tpl="yl_figure_sample"],
 div[tpl="jr_stock_market_san"],
 div[tpl="rel_party_head"],
-div[tpl="car_brand_kg_ideal"] {
+div[tpl="car_brand_kg_ideal"],
+#main-wrapper {
   margin: 0 0 10px !important;
   padding: 10px 20px !important;
   /* 覆盖 AI 总结框的固定高度 */
