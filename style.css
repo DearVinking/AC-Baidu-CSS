@@ -232,13 +232,18 @@ span[class*="detail-btn_"],
 .cosc-card-horizontal-gradient,
 div[data-module="header"],
 a[data-module="aicreate"],
-#main-wrapper {
+#main-wrapper,
+.pc-fresh-smooth .cosc-card-shadow:after{
   display: none !important;
 }
 
 /* ========================
    搜索结果容器样式
    ======================== */
+#container{
+  margin-top: .85rem;
+}
+
 
 /* 结果框优化 */
 #container,
